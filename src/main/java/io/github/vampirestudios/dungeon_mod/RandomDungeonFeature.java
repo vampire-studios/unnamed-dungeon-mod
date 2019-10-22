@@ -1,19 +1,15 @@
 package io.github.vampirestudios.dungeon_mod;
 
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeAccess;
-import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.AbstractTempleFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
- 
-import java.util.Random;
+
 import java.util.function.Function;
  
-public class ExampleFeature extends AbstractTempleFeature<DefaultFeatureConfig> {
+public class RandomDungeonFeature extends AbstractTempleFeature<DefaultFeatureConfig> {
  
-    public ExampleFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> config) {
+    public RandomDungeonFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> config) {
         super(config);
     }
 
@@ -24,12 +20,12 @@ public class ExampleFeature extends AbstractTempleFeature<DefaultFeatureConfig> 
 
     @Override
     public StructureFeature.StructureStartFactory getStructureStartFactory() {
-        return ExampleStructureStart::new;
+        return RandomDungeonStructureStart::new;
     }
  
     @Override
     public String getName() {
-        return "Test Dungeon";
+        return "Random Dungeon";
     }
  
     @Override
